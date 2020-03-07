@@ -53,9 +53,9 @@ class ActivityMain {
 
                 case 1: {
                     System.out.println("\nO que deseja inserir na lista?\n");
-                    int value = Integer.parseInt(in.readLine());
+                    String value = in.readLine();
 
-                    if (data.insert((int) value))
+                    if (data.insert((String) value))
                         System.out.println("\n" + value + " inserido com sucesso na lista!");
 
                     break;
@@ -66,7 +66,7 @@ class ActivityMain {
                     Object result = data.remove();
 
                     if (result != null)
-                        System.out.println(" " + data.remove());
+                        System.out.println(" " + result);
 
                     break;
                 }

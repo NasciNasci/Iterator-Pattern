@@ -49,15 +49,17 @@ public class Data {
 
         try {
 
-            this.data[++this.exists] = data;
+            this.data[this.exists + 1] = data;
+            /* Add one to the variable only if it passes the Exceptions */
 
         } catch (IndexOutOfBoundsException e) {
 
-            this.exists--;
             System.err.println("\nA lista ja esta cheia!");
             return false;
 
         }
+
+        this.exists++;
 
         return true;
 
@@ -71,19 +73,20 @@ public class Data {
 
         try {
 
-            deleted = this.data[this.exists--];
+            deleted = this.data[this.exists];
 
         } catch (IndexOutOfBoundsException e) {
 
-            this.exists++;
             System.err.println("\nA lista ja esta vazia!");
+            return null;
 
         } catch (NullPointerException e) {
 
-            this.exists++;
             System.err.println("\nA lista ja esta vazia!");
-
+            return null;
         }
+
+        this.exists--;
 
         return deleted;
 
