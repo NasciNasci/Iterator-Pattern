@@ -68,6 +68,7 @@ public class DataArray implements Iterator {
         }
 
         System.out.println();
+        
     }
 
 }
